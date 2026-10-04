@@ -1,0 +1,32 @@
+# Local Solis data (contains inverter serials / site details)
+data/
+
+# Dependencies
+node_modules/
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Logs and temp files
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+*.cache
+*.pid
+*~
+
+# Test / build output
+coverage/
+dist/
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
