@@ -2,6 +2,8 @@
 
 A small zero-dependency Node.js CLI for analysing a saved SolisCloud `inverterDay` response.
 
+Save each day's API response as a `.json` file (e.g. `data/2026-10-01.json`). The `data/` folder is git-ignored because responses include inverter serials and site details.
+
 ## Requirements
 
 Node.js 20+ is recommended. The tool only uses Node's built-in modules.
@@ -9,19 +11,19 @@ Node.js 20+ is recommended. The tool only uses Node's built-in modules.
 ## Run
 
 ```bash
-node solis-analyse.mjs "Pasted text.txt"
+node solis-analyse.mjs data/2026-10-01.json
 ```
 
 Show every normalised interval:
 
 ```bash
-node solis-analyse.mjs "Pasted text.txt" --intervals
+node solis-analyse.mjs data/2026-10-01.json --intervals
 ```
 
 Show an approximate energy-flow breakdown and interval flow view:
 
 ```bash
-node solis-analyse.mjs "Pasted text.txt" --flow
+node solis-analyse.mjs data/2026-10-01.json --flow
 ```
 
 The `--flow` output deliberately compares the interval-derived totals with Solis' daily counters. Where the instantaneous readings do not reconcile, the difference
@@ -31,13 +33,13 @@ as grid export/import.
 Show only intervals that meet the conservative curtailment test:
 
 ```bash
-node solis-analyse.mjs "Pasted text.txt" --curtailment
+node solis-analyse.mjs data/2026-10-01.json --curtailment
 ```
 
 Machine-readable output:
 
 ```bash
-node solis-analyse.mjs "Pasted text.txt" --json
+node solis-analyse.mjs data/2026-10-01.json --json
 ```
 
 ## What it reports
